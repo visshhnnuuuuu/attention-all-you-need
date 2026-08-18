@@ -12,7 +12,7 @@ class PositionalEmbedding(nn.Module):
         # Create positional encoding matrix
         # Shape: (max_len, d_model)
         pe = torch.zeros(max_len, d_model)
-
+    
         # Position indices
         # Shape: (max_len, 1)
         position = torch.arange(0, max_len, dtype=torch.float).unsqueeze(1)
