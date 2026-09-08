@@ -1,10 +1,10 @@
 import torch
 import torch.nn as nn
 
-from encoder_block import EncoderBlock
+from decoder_block import DecoderBlock
 
 
-class Encoder(nn.Module):
+class Decoder(nn.Module):
 
     def __init__(
         self,
@@ -17,7 +17,7 @@ class Encoder(nn.Module):
         super().__init__()
 
         self.layers = nn.ModuleList([
-            EncoderBlock(
+            DecoderBlock(
                 d_model=d_model,
                 num_heads=num_heads,
                 d_ff=d_ff,
@@ -26,12 +26,21 @@ class Encoder(nn.Module):
             for _ in range(num_layers)
         ])
 
-    def forward(self, x, mask=None):
+    def forward(
+        self,
+        x,
+        encoder_output,
+        self_mask=None,
+        cross_mask=None
+    ):
 
         for layer in self.layers:
+
             x = layer(
                 x,
-                mask
+                encoder_output,
+                self_mask,
+                cross_mask
             )
 
         return x
