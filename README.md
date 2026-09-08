@@ -29,3 +29,26 @@ Decoder
 Autoregressive Translation
       ↓
 English Sentence
+## 📊 Results
+
+The model was trained on approximately 49.8K Hindi-English
+translation pairs.
+
+### Training
+
+| Metric | Result |
+|---|---:|
+| Training pairs | ~44.8K |
+| Validation pairs | ~5K |
+| Epochs | 10 |
+| Model dimension | 128 |
+| Transformer layers | 2 |
+| Attention heads | 8 |
+
+### Sample translations
+
+| Hindi | Model Output |
+|---|---|
+| मैं एक सेब खाता हूँ | ... |
+| मुझे किताबें पसंद हैं | ... |
+| मैं स्कूल जाता हूँ | ... |
