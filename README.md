@@ -29,6 +29,9 @@ Decoder
 Autoregressive Translation
       ↓
 English Sentence
+
+
+
 ## 📊 Results
 
 The model was trained on approximately 49.8K Hindi-English
